@@ -1,0 +1,398 @@
+% Input from Hikita-rewrite.tex.
+\section{A second proof of the dimension bound}\label{sec:bps}
+
+% COMMENT: drafted 2026-10-14 from two unattributed notes Ben received,
+% hikita_bps_only_proof.pdf and hall_coulomb_comparison.pdf (not in the
+% repository).  Credit is still to be settled.  Citation checks against the
+% sources are recorded in NOTES.md, "The BPS route".
+
+This section gives a second proof of Proposition~\ref{prop:loopremoval}:
+$\dim B_0=\dim H^*(X_{\nu_{\det}})$ for every quiver.  It adds no loops and
+does not use \S\ref{sec:loops}.  Instead, it writes $B_0$ as a quotient of a
+space $P_\Bd$: the part of dimension $(\bv,1)$ of a cohomological Hall algebra
+of the framed quiver $\hat Q$, modulo decomposable elements and the image of
+one tautological operator.  BPS cohomology spans $P_\Bd$, and Botta and
+Davison identify it with $H^*(X_{\nu_{\det}})$.  The argument gives the
+dimension only, not the Poincar\'e polynomial of Theorem~\ref{thm:loops}.
+
+The proof is conditional.  It uses results of Jindal and Neguț
+\cite{jindalLoopNilpotent2026} whose proofs are only sketched there; see
+Remark~\ref{rem:bps-status}.  Throughout, $F$ is trivial, $\hbar=0$ on the
+Coulomb side, $X=X_{\nu_{\det}}$, and $B_0=A_0/I_B$, where $I_B$ is generated
+by the elements of nonzero charge.
+
+\subsection{The framed quiver}\label{ss:bps-framed}
+Let $\hat Q$ be $Q$ with one more vertex $\infty$ and $w_i$ arrows from
+$\infty$ to $i$, as in \S\ref{ss:setup}, and put $\Bd=(\bv,1)$.  Let
+$V_\infty=\C$ and $\hat G=G\times\GL(V_\infty)$.  After choosing bases of the
+$W_i$, the representation space of $\hat Q$ of dimension $\Bd$ is $N$, with
+$\Hom(W_i,V_i)=\Hom(V_\infty,V_i)^{w_i}$.  Let $\hat A$ be the Coulomb branch
+of $(\hat G,N)$, at $\hbar=0$ and without flavor.  Its charges lie in
+$\Z^{Q_0}\times\Z$.  The scalars in $\hat G$ act trivially on $N$, and this
+splits $\hat A$, as in \pre{(8.4)}.
+
+We use the abelianization of \S\ref{sec:deform}, as set out before
+Proposition~\ref{prop:loopremoval}, for $\hat Q$ and $\Bd$ as well as for $Q$
+and $\bv$.  Put $\hat\Omega=\Omega\sqcup\{\infty\}$, and let $\hat x_d$,
+$d\in\hat\Omega$, be the coordinates on the Lie algebra of the diagonal torus
+$\hat T$ of $\hat G$.  Put
+\[
+ x_d=\hat x_d-\hat x_\infty\quad(d\in\Omega),\qquad x_\infty=\hat x_\infty,
+\]
+so that $H^*_{\hat T}(\mathrm{pt})=\Pol[x_\infty]$.  Let $\hat\one\in\Z^{\hat\Omega}$
+be the coweight with all entries $1$, and put
+\[
+ b=\sum_{d\in\Omega}x_d\in R,\qquad D=1+\sum_{k\in Q_0}v_k .
+\]
+Write $\hat r_\lambda$ and $\hat{\mathsf S}_\lambda(p)$ for the elements of
+\S\ref{sec:deform} defined for $(\hat T,N)$, and $r_\lambda$, $\mathsf
+S_\lambda(p)$ for those of $(T,N)$, written in the variables $x_d$.
+
+\begin{lemma}\label{lem:bps-split}
+Identify $e^{(\mu,0)}$ with $e^\mu$ for $\mu\in\Z^\Omega$.  Then:
+\begin{enumerate}[leftmargin=2em]
+\item $\hat r_{(\mu,k)}=r_{\mu-k\one}\,e^{k\hat\one}$ for $(\mu,k)\in\Z^\Omega\times\Z$;
+in particular $\hat r_{\pm\hat\one}=e^{\pm\hat\one}$;
+\item $\hat A=A_0[x_\infty,e^{\pm\hat\one}]$, and the map
+$A_0\otimes\C[x_\infty,e^{\pm\hat\one}]\to\hat A$ is an isomorphism;
+\item the part of $\hat A$ of charge $(\gamma,k)$ is
+$A_0^{(\gamma-k\bv)}[x_\infty]\,e^{k\hat\one}$;
+\item $\sum_{d\in\hat\Omega}\hat x_d=b+Dx_\infty$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+The $\hat T$-weights of $N$ are the $\hat x_e-\hat x_d=x_e-x_d$, for the arrows
+of $Q$, and the $\hat x_d-\hat x_\infty=x_d$, for the framing.  In the
+variables $x_d$ these are the $T$-weights $\cB$ of $N$, and each pairs with
+$(\mu,k)$ as it pairs with $\mu-k\one$.  This gives~(1), as
+$e^{(\mu,k)}=e^{(\mu-k\one,0)}e^{k\hat\one}$.  Since $V_\infty$ is a line,
+the root factors also agree: $\mathrm{eu}_{(\mu,k)}=\mathrm{eu}_{\mu-k\one}$.
+So $\hat{\mathsf S}_{(\mu,k)}(p)=\mathsf S_{\mu-k\one}(p)\,e^{k\hat\one}$ for
+$p\in\Pol^{\cW_\mu}[x_\infty]$.
+
+A coweight $(\mu,k)$ has all entries in $\{0,1\}$ exactly when
+$k\in\{0,1\}$ and $\mu-k\one$ has all entries in $\{0,1\}$ (if $k=0$) or in
+$\{-1,0\}$ (if $k=1$); similarly for $\{0,-1\}$.  Also
+$H^*_{\hat G}(\mathrm{pt})=R[x_\infty]$.  So~\ref{I:gen}, for $\hat Q$ and for $Q$,
+shows that $\hat A$ is generated over $R[x_\infty]$ by the
+$\mathsf S_\nu(p)\,e^{k\hat\one}$, with $\nu$ minuscule and $k\in\{0,\pm1\}$,
+and that these generate $A_0[x_\infty,e^{\pm\hat\one}]$.  This is the first
+part of~(2).  The map in~(2) is injective because
+$\Z^{\hat\Omega}=\Z^\Omega\times\Z\hat\one$ and $x_\infty$ is transcendental
+over $\mathrm{Frac}(\Pol)$.  For~(3), the coweight $(\mu,k)$ has charge
+$(c,k)$, where $c$ is the charge of $\mu$, and $\mu-k\one$ has charge
+$c-k\bv$.  For~(4), $\sum_{d\in\Omega}(x_d+x_\infty)+x_\infty=b+Dx_\infty$.
+\end{proof}
+
+Define an algebra homomorphism
+\[
+ \Theta\colon\hat A\to B_0,\qquad a\,x_\infty^je^{k\hat\one}\mapsto[a]\,(-b/D)^j\qquad(a\in A_0).
+\]
+It is well defined by Lemma~\ref{lem:bps-split}(2).  It is an algebra map
+because the isomorphism there is one of algebras, and $\Theta$ is the tensor
+product of the quotient map $A_0\to B_0$ with
+$x_\infty\mapsto-b/D$, $e^{\hat\one}\mapsto1$.
+Lemma~\ref{lem:bps-split}(3),(4) give:
+\begin{enumerate}[leftmargin=2.6em,label=($\Theta$\arabic*)]
+\item\label{Th:charge} $\Theta$ kills the part of $\hat A$ of charge
+$(\gamma,k)$ unless $\gamma=k\bv$;
+\item\label{Th:det} $\Theta\big((\sum_{d\in\hat\Omega}\hat x_d)\,a\big)=0$ for all
+$a\in\hat A$;
+\item\label{Th:coef} $\Theta\big(p(\hat x_d-\hat x_\infty:d\in\Omega)\big)=[p]$ for
+$p\in R$.
+\end{enumerate}
+The value $-b/D$ is the only one compatible with~\ref{Th:det}.  The
+corresponding projection $\hat x\mapsto\hat x-\frac1D(\sum_d\hat x_d)\hat\one$
+splits off the scalars in the Lie algebra of $\hat T$.  Since it divides by
+$D$, it does not come from a splitting of $\hat T$, which is why we use
+$\Theta$ and not a decomposition of $\hat G$.
+
+\begin{lemma}\label{lem:bps-charge}
+If $0\neq\alpha\le\Bd$ and $\alpha\neq\Bd$, write $\alpha=(\gamma,k)$.  Then
+$\gamma\neq k\bv$.
+\end{lemma}
+
+\begin{proof}
+Here $k\in\{0,1\}$.  If $k=0$ then $\gamma\neq0$.  If $k=1$ then
+$\gamma\le\bv$ and $\gamma\neq\bv$.
+\end{proof}
+
+\subsection{The loop-nilpotent Hall algebra}\label{ss:bps-hall}
+Let $\mathsf P=\C[\hbar,u_a:a\in\hat Q_1]$, with maximal ideal
+$\fm=(\hbar,u_a)$.  Here $\hbar$ is a new parameter on the Hall algebra side; it
+becomes the loop rotation parameter of the Coulomb branch, which we then set
+to $0$.  The tripled quiver of $\hat Q$ has the arrows $a$ of $\hat Q$, their
+reverses $a^*$, and a loop $\omega_k$ at every vertex $k$.  It carries its
+canonical potential and the action of a torus with weights $-u_a$ on $a$,
+$u_a-\hbar$ on $a^*$ and $\hbar$ on $\omega_k$, which preserves the potential
+\cite[\S3.1]{jindalLoopNilpotent2026}.  Let
+$\cH_{\mathsf P}=\bigoplus_{\Bn}\cH_{\mathsf P,\Bn}$ be the loop-nilpotent
+cohomological Hall algebra of \cite[\S3]{jindalLoopNilpotent2026}, with
+coefficients extended to $\C$.  It is the equivariant critical cohomological
+Hall algebra of the tripled quiver, with the $\omega_k$ required to be
+nilpotent.  It is graded by dimension vectors
+$\Bn\in\Z_{\ge0}^{\hat Q_0}$, with $\cH_{\mathsf P,0}=\mathsf P$, and each
+$\cH_{\mathsf P,\Bn}$ is a module over
+$H^*_{G_\Bn}(\mathrm{pt})\otimes\mathsf P=\mathsf P[z_{k,a}:a\le n_k]^{\mathrm{sym}}$, where
+$G_\Bn=\prod_k\GL_{n_k}$.  We use the product $F\star G$, the product of
+\cite{jindalLoopNilpotent2026} twisted by the sign
+$(-1)^{\sum_{a\colon k\to l}n_lm_k}$ for $F$ of dimension $\Bn$ and $G$ of
+dimension $\Bm$, as in \pre{(8.1)}.  The twist changes a word only by a sign
+depending on the dimensions of its letters, so it does not change spans of
+words.
+
+For $g\in\mathsf P[z]^{\mathrm{sym}}$ let $e_\Bn(g)=g\cdot[\omega=0]_\Bn\in\cH_{\mathsf
+P,\Bn}$ \cite[(98)]{jindalLoopNilpotent2026}.  Under the shuffle map of
+\cite[\S3]{jindalLoopNilpotent2026} it goes to
+$g(z)\prod_k\prod_{a,b=1}^{n_k}(z_{k,b}-z_{k,a}+\hbar)$
+\cite[Lemma~3.6]{jindalLoopNilpotent2026}.  By definition,
+$e_\Bn(hg)=h\cdot e_\Bn(g)$ for symmetric $h$.  Let $C_\Bn$ be the action of
+$\sum_{k,a}z_{k,a}=c_1(\bigotimes_k\det V_k)$, the first Chern class of the
+total determinant, on $\cH_{\mathsf P,\Bn}$.  It is a derivation:
+\begin{equation}\label{eq:bps-derivation}
+ C_{\Bn+\Bm}(F\star G)=(C_\Bn F)\star G+F\star(C_\Bm G),
+\end{equation}
+because the total determinant is multiplicative in short exact sequences;
+\cite[Prop.~4.1]{davisonAffineBPS2022} proves this vertex by vertex.
+
+Let $\cH=\cH_{\mathsf P}/\fm\cH_{\mathsf P}$, graded by the $\cH_\Bn$, and write
+$e_\Bn(g)$ and $C_\Bn$ also for their images.  This specialization is
+abstract.  The shuffle image of $e_\Bn(g)$ is divisible by $\hbar^{|\Bn|}$, so
+it vanishes in the specialized shuffle algebra, but the class of $e_\Bn(g)$ in
+$\cH$ need not vanish.  Put
+\[
+ \cT_\Bd=\sum_{\substack{\alpha+\beta=\Bd\\ \alpha,\beta\neq0}}\cH_\alpha\star\cH_\beta,
+ \qquad
+ P_\Bd=\cH_\Bd\big/(\cT_\Bd+C_\Bd\cH_\Bd).
+\]
+By~\eqref{eq:bps-derivation}, $C_\Bd\cT_\Bd\subseteq\cT_\Bd$.
+
+We use the following inputs.
+\begin{enumerate}[leftmargin=2.6em,label=(H\arabic*)]
+\item\label{H:poly} \emph{Polynomial generation}
+\cite[Thm.~2.4, Lemma~3.6, Prop.~3.7, Thm.~3.5]{jindalLoopNilpotent2026}.
+$\cH_{\mathsf P}$ is generated as a $\mathsf P$-algebra by the elements
+$e_\Bn(g)$.
+\item\label{H:bps} \emph{BPS generation} \cite[(101)--(110),
+Cor.~3.15]{jindalLoopNilpotent2026}.  There are $\mathsf P$-modules $L_\Bn$, the
+loop-nilpotent BPS cohomology, and $\mathsf P$-linear maps
+$\beta_\Bn\colon L_\Bn\to\cH_{\mathsf P,\Bn}$, such that $\cH_{\mathsf P}$ is
+generated as a $\mathsf P$-algebra by the $C_\Bn^k\beta_\Bn(\ell)$, for $k\ge0$
+and $\ell\in L_\Bn$.  This rests on cohomological integrality
+\cite[Thm.~C]{davisonCohomologicalDonaldsonThomas2020}, in its equivariant
+form \cite[Thm.~11.7]{davisonBPSAlgebras2023},
+\cite[Thm.~3.4]{davisonAffineBPS2022}.  The tautological class $u$ of
+\cite[(103)]{jindalLoopNilpotent2026} acts as $C_\Bn$; this is the
+convention of \cite[\S3.4, (18)--(19)]{davisonAffineBPS2022}.
+\item\label{H:framed} \emph{Framed BPS cohomology.}  If $\bw\neq0$, then
+$L_\Bd$ is a free $\mathsf P$-module of rank $\dim H^*(X)$.  Indeed,
+$L_\Bn\cong\hbar M_\Bn$ as $\mathsf P$-modules
+\cite[Prop.~3.14]{jindalLoopNilpotent2026}, where $M_\Bn$ is the equivariant
+BPS Lie algebra of the preprojective algebra of $\hat Q$ in dimension $\Bn$
+\cite[Def.~3.6]{bottaOkounkovConjecture2023}.  Next,
+$M_\Bn\cong M_\Bn^{\mathrm{noneq}}\otimes\mathsf P$
+\cite[Cor.~11.10]{davisonBPSAlgebras2023}; the group allowed there contains
+our torus.  Finally, $M_\Bd^{\mathrm{noneq}}\cong H^*(X)$, up to a shift of
+degrees \cite[Cor.~3.13]{bottaOkounkovConjecture2023}.  The last result uses
+framing arrows from $\infty$ to $i$, as here, and the stability $\delta_\infty$,
+for which a module of dimension $\Bd$ is semistable exactly when no proper
+submodule contains $V_\infty$.  So it is semistable exactly when the images of
+the $W_i$ generate $V$, which is $\nu_{\det}$-stability by~\ref{I:cyc}.
+\end{enumerate}
+
+\begin{remark}[status of the inputs]\label{rem:bps-status}
+With independent parameters, the genericity conditions of
+\cite[\S2.2]{jindalLoopNilpotent2026} hold.
+\begin{enumerate}[leftmargin=2em]
+\item \cite[Thm.~2.4]{jindalLoopNilpotent2026} is a statement about a
+shuffle algebra, and its proof is only sketched: it is ``completely
+analogous'' to the K-theoretic case treated in earlier work of the same
+authors.  The transfer to $\cH_{\mathsf P}$ uses
+\cite[Prop.~3.7]{jindalLoopNilpotent2026} (proof sketched),
+\cite[Lemma~3.6]{jindalLoopNilpotent2026} (stated without proof) and the
+injectivity of the shuffle map \cite[Thm.~3.5]{jindalLoopNilpotent2026} (proof
+omitted).
+\item The PBW isomorphism for the loop-nilpotent algebra is
+\cite[(109)]{jindalLoopNilpotent2026}, stated as an isomorphism of graded
+vector spaces.  That it is induced by the product, which is what generation
+needs, is implicit.  The proof of \cite[Cor.~3.15]{jindalLoopNilpotent2026}
+cites the PBW theorem for the full algebra, Thm.~3.10 there, where (109) is
+needed.
+\item \cite[Prop.~3.14]{jindalLoopNilpotent2026} has a complete proof, which
+uses \cite[Thm.~3.5]{jindalLoopNilpotent2026}.  The identification
+\cite[Cor.~3.13]{bottaOkounkovConjecture2023} is sheaf-theoretic.  It combines
+a comparison of BPS sheaves for different stability conditions
+\cite[Prop.~3.4]{bottaOkounkovConjecture2023} with the description of the
+stable framed BPS sheaf as the intersection complex of $X\times\A^1$
+\cite[Prop.~3.11]{bottaOkounkovConjecture2023}, where $\A^1$ records the
+common scalar of the loops $\omega_k$.  No Kac polynomials, point counts or
+Hausel's formula enter.
+\end{enumerate}
+\end{remark}
+
+\subsection{The Hall--Coulomb map}\label{ss:bps-map}
+For $\Bn\le\Bd$ let $\lambda_\Bn\in\Z^{\hat\Omega}$ be the coweight that is $1$ on
+the first $n_k$ elements of each $\hat\Omega_k$ and $0$ elsewhere.  It is
+minuscule, with charge $\Bn$, and $\lambda_\Bd=\hat\one$.  For $g$ in
+$\C[z_{k,a}:a\le n_k]^{\mathrm{sym}}$ write $g(\hat x_\Bn)$ for $g$
+evaluated at the $\hat x_d$ with $(\lambda_\Bn)_d=1$.  It lies in
+$\Pol[x_\infty]^{\cW_{\lambda_\Bn}}$.
+
+\begin{lemma}[\pre{Lemma~8.1}]\label{lem:hall-coulomb}
+Assume~\ref{H:poly}.  There is an algebra homomorphism
+$\Upsilon\colon(\cH,\star)\to\hat A$ with the following properties.  It sends
+$\cH_\Bn$ into the part of charge $\Bn$, and $e_\Bn(g)$ to $0$ if
+$\Bn\not\le\Bd$.  For $\Bn\le\Bd$,
+\[
+ \Upsilon(e_\Bn(g))=\epsilon_\Bn\,\hat{\mathsf S}_{\lambda_\Bn}\big(g(\hat x_\Bn)\big),
+\]
+with $\epsilon_\Bn=\pm1$ depending only on $\Bn$.  In particular
+$\Upsilon(e_\Bd(g))=\epsilon_\Bd\,g(\hat x)\,e^{\hat\one}$.
+\end{lemma}
+
+\begin{proof}[Sketch]
+We follow \pre{Lemma~8.1}, which treats the shuffle algebra; it applies to
+$\cH_{\mathsf P}$ through the shuffle map, an algebra homomorphism.  Over
+$\mathrm{Frac}(\mathsf P)$, Tsymbaliuk's homomorphism from the shuffle
+algebra to difference operators
+\cite[Thm.~5.7]{tsymbaliukDifferenceOperators2023} gives an algebra
+homomorphism $\Upsilon_{\mathsf P}$ from $(\cH_{\mathsf P},\star)$ to
+difference operators in the $\hat x_d$, with
+$D^\lambda f(\hat x)=f(\hat x+\hbar\lambda)D^\lambda$.  It sends $e_\Bn(g)$ to
+$0$ if $\Bn\not\le\Bd$, and otherwise to $\pm E_\Bn(g)$, where
+\[
+ E_\Bn(g)=\sum_{w\in\cW/\cW_{\lambda_\Bn}}w\Big(g(\hat x_\Bn)\,
+ \frac{\prod_{a\colon k\to l}\prod(\hat x_d-\hat x_e+u_a)}
+      {\prod_k\prod(\hat x_d-\hat x_e)}\Big)D^{w\lambda_\Bn}
+ \qquad\text{\pre{(8.2)}}.
+\]
+In the numerator $d\in\hat\Omega_k$ and $e\in\hat\Omega_l$; in the
+denominator $d,e\in\hat\Omega_k$.  In both, $(\lambda_\Bn)_d=1$ and
+$(\lambda_\Bn)_e=0$.  The reason is that Tsymbaliuk's map evaluates a shuffle
+element on strings with step $\hbar$.  The factor $\prod(z_{k,b}-z_{k,a}+\hbar)$
+vanishes on every string of length at least two, so only minuscule shifts
+survive.  Its diagonal factors $\hbar^{|\Bn|}$ cancel the normalization of
+\pre{Lemma~8.1}.
+
+The coefficients of the $E_\Bn(g)$ lie in $\mathsf P[\hat x]$, localized at the
+$\hat x_d-\hat x_e+r\hbar$ for $d\neq e$ in the same $\hat\Omega_k$ and
+$r\in\Z$.  This ring is stable under the shifts, so the difference operators
+with coefficients in it form a $\mathsf P$-algebra $\cD_{\mathsf P}$.  By~\ref{H:poly},
+$\Upsilon_{\mathsf P}(\cH_{\mathsf P})\subseteq\cD_{\mathsf P}$, with no parameter
+inverted.  Reducing modulo $\fm$ makes the $D^\lambda$ commute, and turns
+$\cD_{\mathsf P}\otimes_{\mathsf P}\mathsf P/\fm$ into
+$\Pol[x_\infty][(\hat x_d-\hat x_e)^{-1}][\Z^{\hat\Omega}]$, with
+$D^\lambda\mapsto e^\lambda$.  Call the resulting map $\Upsilon$.
+
+At $u_a=0$ the denominator of $E_\Bn(g)$ is $\mathrm{eu}_{\lambda_\Bn}$, and the
+numerator is, up to a sign depending on $\Bn$, the product of the weights
+$\beta$ of $N$ with $\langle\beta,\lambda_\Bn\rangle=-1$.  This is the
+prefactor of $\hat r_{\lambda_\Bn}$.  So $\Upsilon(e_\Bn(g))$ is
+$\pm\hat{\mathsf S}_{\lambda_\Bn}(g(\hat x_\Bn))$, which is the image of a dressed
+minuscule monopole \cite[Prop.~6.6]{BFN}.  The images of the generators lie
+in $\hat A$, and by~\ref{H:poly} so does the image of $\cH$.  The charge of
+$w\lambda_\Bn$ is $\Bn$.  For $\Bn=\Bd$ both products are empty and
+$\cW_{\lambda_\Bd}=\cW$, so $E_\Bd(g)=g(\hat x)D^{\hat\one}$.
+\end{proof}
+
+% COMMENT: [plausible, not checked against Tsymbaliuk's formula] Step 3
+% below can avoid (H1).  At hbar = 0 the image of h F, for h symmetric,
+% multiplies the D^lambda term of the image of F by h evaluated on the
+% strings, so the image of C_d F is delta(image of F), where delta multiplies
+% e^lambda by <lambda, \hat x>; that is, delta is minus the Poisson bracket
+% with the Casimir (1/2) sum \hat x_d^2.  Then Theta(delta(a)) = 0 for a of
+% charge d: delta(e^{\hat 1}) = (sum \hat x_d) e^{\hat 1}, and on A_0^{(0)} =
+% R + sum A^{(-c)}A^{(c)} (Lemma lem:generic) delta kills R and preserves I_B.
+% This is the derivation D_{i,k} of the preprint's section 5.  (H1) would
+% then be needed only for the image of Upsilon to lie in \hat A.
+
+\subsection{The bound}\label{ss:bps-bound}
+
+\begin{theorem}\label{thm:bps}
+Assume~\ref{H:poly}, \ref{H:bps} and~\ref{H:framed}.  For every quiver $Q$,
+loops and multiple arrows allowed, and all $\bv$ and $\bw$,
+\[
+ \dim B_0\le\dim H^*(X).
+\]
+\end{theorem}
+
+\begin{proof}
+If $\bv=0$, then $B_0=\C$ and $X$ is a point.  If $\bw=0$ and $\bv\neq0$,
+then $X$ is empty by~\ref{I:cyc}.  Also $\one$ pairs to zero with every weight
+of $N$, so $r_{\pm\one}=e^{\pm\one}$, and by~\ref{I:gen} these lie in $A_0$.
+They are inverse to each other and have nonzero charge $\pm\bv$, so $1\in I_B$
+and $B_0=0$.  So assume $\bv\neq0$ and $\bw\neq0$, and let
+\[
+ \psi=\Theta\circ\Upsilon|_{\cH_\Bd}\colon\cH_\Bd\to B_0 .
+\]
+
+\emph{Step 1: $\psi$ is onto.}  For $p\in R$, let $g=p(z_{k,a}-z_{\infty,1})$,
+which is symmetric at each vertex.  By Lemma~\ref{lem:hall-coulomb},
+$\Upsilon(e_\Bd(g))=\epsilon_\Bd\,p(\hat x_d-\hat x_\infty)\,e^{\hat\one}$, so
+$\psi(e_\Bd(g))=\epsilon_\Bd[p]$ by~\ref{Th:coef}.  The map $R\to B_0$ is onto
+by Lemma~\ref{lem:generic}.
+
+\emph{Step 2: $\psi(\cT_\Bd)=0$.}  Let $\alpha+\beta=\Bd$ with
+$\alpha,\beta\neq0$.  Then $\Upsilon(\cH_\alpha)$ has charge $\alpha$, which
+$\Theta$ kills by~\ref{Th:charge} and Lemma~\ref{lem:bps-charge}.  As $\Upsilon$
+and $\Theta$ are multiplicative, $\psi(\cH_\alpha\star\cH_\beta)=0$.
+
+\emph{Step 3: $\psi(C_\Bd\cH_\Bd)=0$.}  By~\ref{H:poly}, $\cH$ is spanned by
+words in the $e_\Bn(g)$.  Letters with $\Bn=0$ are scalars, and a word of
+dimension $\Bd$ with at least two letters of nonzero dimension lies in
+$\cT_\Bd$.  So $\cH_\Bd$ is spanned by the $e_\Bd(g)$ and $\cT_\Bd$.  Now
+$C_\Bd e_\Bd(g)=e_\Bd\big((\sum_{k,a}z_{k,a})g\big)$, so
+\[
+ \psi(C_\Bd e_\Bd(g))=\epsilon_\Bd\,\Theta\Big(\big(\textstyle\sum_{d\in\hat\Omega}\hat x_d\big)\,g(\hat x)\,e^{\hat\one}\Big)=0
+\]
+by~\ref{Th:det}.  Also $C_\Bd\cT_\Bd\subseteq\cT_\Bd$, which $\psi$ kills by
+Step~2.  So $\psi$ induces a surjection $P_\Bd\to B_0$.
+
+\emph{Step 4: the bound.}  Put $\bar L_\Bd=L_\Bd/\fm L_\Bd$.  By~\ref{H:bps},
+and as tensor products are right exact, $\cH$ is generated by the images of
+the $C_\Bn^k\beta_\Bn(\ell)$.  The word argument of Step~3 shows that $\cH_\Bd$
+is spanned by $\cT_\Bd$ and the $C_\Bd^k\beta_\Bd(\ell)$, $\ell\in\bar L_\Bd$.
+The terms with $k\ge1$ lie in $C_\Bd\cH_\Bd$, so $\bar L_\Bd\to P_\Bd$ is onto.
+By~\ref{H:framed}, $\dim\bar L_\Bd=\dim H^*(X)$.  Hence
+\[
+ \dim B_0\le\dim P_\Bd\le\dim\bar L_\Bd=\dim H^*(X).\qedhere
+\]
+\end{proof}
+
+No injectivity is needed anywhere in this proof, and no map is compared with
+a geometric one.
+
+\begin{corollary}\label{cor:bps}
+Assume~\ref{H:poly}, \ref{H:bps} and~\ref{H:framed}.  Then
+Proposition~\ref{prop:loopremoval} holds: for every quiver,
+$\Phi\colon B_0\to H^*(X)$ is an isomorphism.  For $\bw\neq0$ the
+surjections $\bar L_\Bd\to P_\Bd\to B_0$ of the proof are isomorphisms of
+vector spaces.  With this in place of Proposition~\ref{prop:loopremoval}, the
+proof of Theorem~\ref{thm:classical}, and so of Theorem~\ref{thm:main}, goes
+through without \S\ref{sec:loops}.
+\end{corollary}
+
+\begin{proof}
+The surjection $\Phi\colon B_0=B^{\nu_{\det}}_0\to H^*(X)$ of \S\ref{sec:map}
+and Theorem~\ref{thm:bps} give $\dim B_0=\dim H^*(X)$, finite, so $\Phi$ is an
+isomorphism.  Then every map in the chain $\bar L_\Bd\to P_\Bd\to B_0$ is a
+surjection between spaces of the same finite dimension.
+\end{proof}
+
+\begin{remark}\label{rem:bps-compare}
+Compared with the proof through \S\ref{sec:loops}:
+\begin{enumerate}[leftmargin=2em]
+\item This proof uses \S\ref{sec:map}, Lemmas~\ref{lem:flavor}
+and~\ref{lem:betti}, and inputs~\ref{I:gen}--\ref{I:cyc}.  It does not use
+\S\ref{sec:loops}, the loops added in Proposition~\ref{prop:loopremoval}, or
+inputs~\ref{I:hypertoric}--\ref{I:core}.
+\item It needs~\ref{H:poly}--\ref{H:framed} and \pre{Lemma~8.1}.  The proof in
+the rest of the paper does not use Jindal--Neguț at all, because
+Lemma~\ref{lem:generic} replaces \pre{\S8}.
+\item It gives $\dim H^*(X)$, but not the formula of Theorem~\ref{thm:loops} or
+the multipartition filtration.  It does not equip $\bar L_\Bd$ or $P_\Bd$ with
+the ring structure of $B_0$, and we have not checked whether the maps
+$\bar L_\Bd\to P_\Bd\to B_0$ respect gradings.
+\end{enumerate}
+\end{remark}

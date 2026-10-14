@@ -250,7 +250,10 @@ graded Nakayama (Lemma~\ref{lem:flavor}), removes the loops
 (Theorem~\ref{thm:classical}).  \S\ref{sec:higgs} describes \S\ref{sec:loops}
 on the quiver variety side: the multipartition filtration becomes the support
 filtration of the decomposition theorem for $\chi$.  It is not used
-elsewhere.
+elsewhere.  \S\ref{sec:bps} gives a second proof of
+Proposition~\ref{prop:loopremoval}, which uses neither \S\ref{sec:loops} nor
+added loops, but depends on results on cohomological Hall algebras whose
+proofs are only sketched in the literature.
 
 \emph{Status.}  The argument is complete given the cited results and
 Theorem~\ref{thm:map}, which is announced in \cite{bottaQuasimapCritical2026}.
@@ -1997,6 +2000,8 @@ Lemma~\ref{lem:generic}, and $\Phi[f]=\kappa(f)$, so its kernel is that of
 $\kappa$.
 \end{proof}
 
+\input{bps-proof}
+
 \section{The quiver variety side}\label{sec:higgs}
 In the setting of \S\ref{sec:loops}, the filtration of
 Proposition~\ref{prop:filt} and the formula of Theorem~\ref{thm:loops} can
@@ -2327,6 +2332,13 @@ in~\ref{I:core}(d);
 refers to Kronheimer, holds for quivers with loops (remark after
 Lemma~\ref{lem:betti}).
 \end{itemize}
+\item The second proof in \S\ref{sec:bps} depends on~\ref{H:poly}
+and~\ref{H:bps}, whose proofs in \cite{jindalLoopNilpotent2026} are only
+sketched (Remark~\ref{rem:bps-status}), and on \pre{Lemma~8.1}.  The sketch
+of Lemma~\ref{lem:hall-coulomb} follows \pre{Lemma~8.1}.  Its signs and
+specialization were compared with \cite{tsymbaliukDifferenceOperators2023}
+only in a machine reading of the preprint, and the formula \pre{(8.2)} was
+not rederived here.
 \item A proof on the quiver variety side that the cuspidal part $V_G$ is
 $(\Pol_G/J_G)\langle\delta_{m_G}\rangle$ would give the formula of
 Theorem~\ref{thm:loops} with no input from the Coulomb branch.  Hausel's
