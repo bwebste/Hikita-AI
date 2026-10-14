@@ -233,9 +233,10 @@ where $W_m$ acts on $P_m/J_m$ as in \S\ref{subsec:Wm}.
 
 We keep the notation of \cite{Hik}; $q_S$ has nothing to do with the variable $q$. By
 \cite[Lemma~6.1]{Hik}, $P_m/J_m$ is finite-dimensional, so $h_m$ is a polynomial. This also follows from
-Remark~\ref{rem:Ym}\ref{it:HS}: there $P_m/J_m$ is identified with the cohomology of the toric
-hyperK\"ahler variety $Y_m$, whose Betti numbers $b_{2k}$ are the $h$-numbers $h_k$, $0\le k\le g_m$, of a
-matroid of rank $g_m$ \cite[Corollaries~4.6 and~6.6]{HS}, where $g_m$ is as in
+Remark~\ref{rem:Ym}\ref{it:HS}: there $P_m/J_m$ is identified, by Konno's theorem
+\cite[Theorem~3.1]{Kon00}, with the cohomology of the toric hyperK\"ahler manifold $Y_m$, which is
+finite-dimensional. Moreover the Betti numbers $b_{2k}$ of $Y_m$ are the $h$-numbers $h_k$,
+$0\le k\le g_m$, of a matroid of rank $g_m$ \cite[Corollaries~4.6 and~6.6]{HS}, where $g_m$ is as in
 Remark~\ref{rem:Ym}\ref{it:dim}. Hence $P_m/J_m$ vanishes in degrees above $2g_m$, and $h_m$ has degree at
 most $g_m$. For $m=\emptyset$ we have $P_\emptyset=\C$, $J_\emptyset=0$ and $h_\emptyset=1$.
 
@@ -421,7 +422,7 @@ its first Betti number when that graph is connected.
 \item\label{it:orient} Changing the orientation changes the sign of some terms of $\mu$. Changing the
 sign of the corresponding reverse coordinates is a $T_m$-equivariant isomorphism, so $Y_m$ does not depend
 on $o$ up to isomorphism. Composing with such sign changes, $W_m$ acts on $Y_m$.
-\item\label{it:HS} \emph{Relation with Hausel--Sturmfels \cite{HS}.} Let $A$ be the integer matrix with
+\item\label{it:HS} \emph{Relation with Konno \cite{Kon00,Kon01} and Hausel--Sturmfels \cite{HS}.} Let $A$ be the integer matrix with
 $|l(m)|$ rows whose columns are the $T_m$-weights \eqref{eq:weights} of the coordinates of $L^o_m$, one
 column for each original arrow and each framing arrow. This is the boundary map \cite[(40)]{HS} of the
 quiver $V^o_m$, with $v_0=\infty$; it is unimodular \cite[Lemma~8.1]{HS}, and $T_m$ plays the role of the
@@ -468,9 +469,24 @@ monomial of the cut separating $S$ from $(\Om\setminus S)\cup\{\infty\}$ then be
 \[
   H^*(Y_m)\cong H^*(X^{\mathrm{Law}}_m)\cong P_m/J_m ,
 \]
-and $J_m$ is the image of the cocircuit ideal; compare \cite[Section~5.1]{Hik}. Combined with the vector
-bundle structure, this gives a second proof of Proposition~\ref{prop:62}\ref{62:a}, the map
-$P_m\to H^*(U_m/T_m)$ sending $x_d$ to $c_1(\mathcal L_d)$. By \cite[Corollary~8.4]{HS}, the Euler
+and $J_m$ is the image of the cocircuit ideal; compare \cite[Section~5.1]{Hik}.
+
+The presentation of $H^*(Y_m)$ is due to Konno \cite[Theorem~3.1]{Kon00}, for smooth toric hyperK\"ahler
+manifolds and with $\Z$ coefficients, earlier than \cite{HS}; see \cite[\S1]{HS}. In his notation $k$ is
+the Lie algebra of the acting torus, i.e.\ the row space of $A$. The monomials $\prod_{b_i\neq0}u_i$, for
+nonzero $\sum_ib_iX_i\in k$, are the products over unions of cocircuits, and his linear forms, the
+elements of $\ker\iota^*\cap(\mathfrak t^N_\Z)^*$, form $\mathrm{Circ}(A)$. So
+\cite[Theorem~3.1]{Kon00} is the presentation $\Z[x]/(\mathrm{Circ}(A)+M^*(A))$ above, and
+\cite[Theorem~3.2]{Kon00} gives the equivalent description in terms of the associated hyperplane
+arrangement. The equivariant cohomology for the residual torus, which is the same ring without the
+linear forms, is \cite[Theorem~2.4]{Kon01}. Konno's proofs \cite[\S7]{Kon00}, \cite[\S3]{Kon01} proceed
+by induction on the number of coordinates, using Thom isomorphisms and split short exact sequences in
+equivariant cohomology; this is close in spirit to the proof of Proposition~\ref{prop:62}\ref{62:a} in
+Section~\ref{sec:kirwan}, which is organized instead by Hesselink's stratification.
+
+Combined with the vector bundle structure, the isomorphism $H^*(X^{\mathrm{Law}}_m)\cong P_m/J_m$ gives
+a second proof of Proposition~\ref{prop:62}\ref{62:a}, where the map $P_m\to H^*(U_m/T_m)$ sends $x_d$ to
+$c_1(\mathcal L_d)$. By \cite[Corollary~8.4]{HS}, the Euler
 characteristic of $Y_m$ is the number of spanning trees of the underlying graph; for $m_b$ in
 Example~\ref{ex:A2} it is $4$. (If some component of the graph misses $\infty$, then $U_m=\emptyset$ and
 $J_m=P_m$, so all these spaces are empty.)
@@ -543,7 +559,10 @@ $H^*(U_m/T_m)\cong P_m/J_m$, and $h_m$ is the Poincar\'e polynomial of $(U_m/T_m
 
 The term $k=\emptyset$ in \eqref{eq:61} is $h_m$, so \eqref{eq:61} determines $h_m$ recursively. The
 proof below is Kirwan's argument \cite{Kir}, applied to Hesselink's stratification of $E_m$ for the torus
-$T_m$ and the character $\rho=\det$ of \eqref{eq:rho}, and made $W_m$-equivariant.
+$T_m$ and the character $\rho=\det$ of \eqref{eq:rho}, and made $W_m$-equivariant. For the toric
+hyperK\"ahler manifold $Y_m$, the corresponding presentation of the cohomology was proved earlier by
+Konno \cite[Theorem~3.1]{Kon00}, also by splitting exact sequences inductively; see
+Remark~\ref{rem:Ym}\ref{it:HS}.
 
 \subsection{Recollection: Hesselink's stratification}\label{subsec:HKKN}
 We recall \cite[\S\S2.2--2.3]{Hos} for a torus $T$ acting linearly on a complex vector space $V$, with a
@@ -1169,6 +1188,15 @@ Ser. (2) \textbf{45} (1994), 515--530.
 \bibitem[Kir]{Kir}
 F.~C. Kirwan, \emph{Cohomology of Quotients in Symplectic and Algebraic Geometry}, Mathematical Notes
 \textbf{31}, Princeton University Press, 1984.
+
+\bibitem[Kon00]{Kon00}
+H.~Konno, \emph{Cohomology rings of toric hyperK\"ahler manifolds}, Internat. J. Math. \textbf{11}
+(2000), no.~8, 1001--1026.
+
+\bibitem[Kon01]{Kon01}
+H.~Konno, \emph{Equivariant cohomology rings of toric hyperK\"ahler manifolds}, in: Proceedings of the
+Second Meeting on Quaternionic Structures in Mathematics and Physics (Rome, 6--10 September 1999),
+pp.~231--240, 2001.
 
 \bibitem[Mac]{Mac}
 I.~G. Macdonald, \emph{Symmetric Functions and Hall Polynomials}, 2nd ed., Oxford University Press, 1995.
