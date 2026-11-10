@@ -7,6 +7,7 @@ participants in the SLMath program on quantum field theory.
 
 - [`hikita-summary.pdf`](hikita-summary.pdf) — the guide (7 pages).
 - [`VERIFICATION.md`](VERIFICATION.md) — section-by-section verification notes: what was checked, what passed, what should be expanded.
+- [`REVIEW.md`](REVIEW.md) — review of `Hikita-rewrite.tex`: whether it gives the Botta–Tamagni argument for the surjection and the two dimension arguments in parallel, plus a step-by-step mathematical check.
 - [`comments-questions.md`](comments-questions.md) — comments, questions and requests about the summary or the proof.
 - [`openai-preprint/`](openai-preprint/) — the preprint itself (PDF and LaTeX source), copied verbatim from `openai/math` under its Apache-2.0 license; see `SOURCE.md` there.
 
